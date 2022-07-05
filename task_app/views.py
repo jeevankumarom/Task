@@ -115,3 +115,24 @@ def get_destination(request):
             return Response({"Token ":"Un Authenticate"})
     else:
         return Response({"error":"set Authorization in headers"})
+
+
+"""
+delete selected account_id and set Authorization in headers
+
+"""
+
+@api_view(['Delete'])
+def delete_account(request):
+    if 'HTTP_AUTHORIZATION' in request.META:
+        if Account_Module.objects.filter(App_secret_token=request.META['HTTP_AUTHORIZATION']).exists():
+            query=Account_Module.objects.filter(account_id=request.GET['account_id']).values()
+            idForDestination=query[0]['id']
+            Destination_Module.objects.filter(account_id=idForDestination).delete()
+            Account_Module.objects.filter(account_id=request.GET['account_id']).delete()
+    
+            return Response({"data":"Deleted"})
+        else:
+            return Response({"Token ":"Un Authenticate"})
+    else:
+        return Response({"error":"set Authorization in headers"})

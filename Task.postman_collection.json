@@ -9,7 +9,7 @@
 		{
 			"name": "Postapi",
 			"request": {
-				"method": "POST",
+				"method": "PUT",
 				"header": [
 					{
 						"key": "Authorization",
@@ -23,17 +23,17 @@
 					"formdata": [
 						{
 							"key": "email_id",
-							"value": "jeevanom@gmail.com",
+							"value": "jeevanom1@gmail.com",
 							"type": "text"
 						},
 						{
 							"key": "account_id",
-							"value": "1122",
+							"value": "1123",
 							"type": "text"
 						},
 						{
 							"key": "account_name",
-							"value": "jeevan",
+							"value": "jeevan kuamr",
 							"type": "text"
 						},
 						{
@@ -95,7 +95,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "5122056543",
+						"value": "3988774061",
 						"type": "text"
 					}
 				],
@@ -108,6 +108,37 @@
 					"path": [
 						"get_destination",
 						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete api",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "3988774061",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/delete/?account_id=1123",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"delete",
+						""
+					],
+					"query": [
+						{
+							"key": "account_id",
+							"value": "1123"
+						}
 					]
 				}
 			},
