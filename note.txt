@@ -1,0 +1,3 @@
+run development server in ubuntu sys using
+
+python3 manage.py runserver --settings=task_proj.settings.dev
